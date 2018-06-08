@@ -1,0 +1,14 @@
+{
+  "name": "webpack3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf ./dist && webpack --config ./library.config.js --progress && webpack --config ./app.config.js --progress"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^3.11.0"
+  }
+}
