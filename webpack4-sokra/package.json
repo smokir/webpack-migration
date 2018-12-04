@@ -1,0 +1,15 @@
+{
+  "name": "webpack4-sokra",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf ./dist && webpack --config ./library.config.js --progress && webpack --config ./app.config.js --progress"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^4.27.0",
+    "webpack-cli": "^3.1.2"
+  }
+}
