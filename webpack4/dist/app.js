@@ -81,11 +81,65 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const library = __webpack_require__(1);
+
+const extensionA = __webpack_require__(2);
+const extensionB = __webpack_require__(3);
+
+extensionA(library);
+extensionB(library);
+
+window.addEventListener('DOMContentLoaded', () => {
+    const rootDiv = document.getElementById('root');
+    rootDiv.textContent = library.doSomething();
+});
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+(window["webpackJsonplibrary"] = window["webpackJsonplibrary"] || []).push([[0],[
+/* 0 */
+/***/ (function(module, exports) {
+
+module.exports = function common() {
+    return Math.random();
+};
+
+
+/***/ }),
+/* 1 */,
+/* 2 */,
+/* 3 */
+/***/ (function(module, exports) {
+
+const _extensions = [];
+
+module.exports = {
+    addExtension(key, extension) {
+        _extensions[key] = extension;
+    },
+    doSomething() {
+        const a = _extensions.a();
+        const b = _extensions.b();
+        return a + b;
+    }
+};
+
+
+/***/ })
+]]);
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -255,7 +309,7 @@ return /******/ (function(modules) { // webpackBootstrap
 const common = __webpack_require__(0);
 
 module.exports = function(library) {
-    library.addExtension('b', () => common() / 2);
+    library.addExtension('a', () => common() * 2);
 };
 
 
@@ -264,7 +318,7 @@ module.exports = function(library) {
 });
 
 /***/ }),
-/* 1 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -434,7 +488,7 @@ return /******/ (function(modules) { // webpackBootstrap
 const common = __webpack_require__(0);
 
 module.exports = function(library) {
-    library.addExtension('a', () => common() * 2);
+    library.addExtension('b', () => common() / 2);
 };
 
 
@@ -442,60 +496,6 @@ module.exports = function(library) {
 
 /******/ });
 });
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-(window["webpackJsonplibrary"] = window["webpackJsonplibrary"] || []).push([[0],[
-/* 0 */
-/***/ (function(module, exports) {
-
-module.exports = function common() {
-    return Math.random();
-};
-
-
-/***/ }),
-/* 1 */,
-/* 2 */,
-/* 3 */
-/***/ (function(module, exports) {
-
-const _extensions = [];
-
-module.exports = {
-    addExtension(key, extension) {
-        _extensions[key] = extension;
-    },
-    doSomething() {
-        const a = _extensions.a();
-        const b = _extensions.b();
-        return a + b;
-    }
-};
-
-
-/***/ })
-]]);
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-const library = __webpack_require__(2);
-
-const extensionA = __webpack_require__(1);
-const extensionB = __webpack_require__(0);
-
-extensionA(library);
-extensionB(library);
-
-window.addEventListener('DOMContentLoaded', () => {
-    const rootDiv = document.getElementById('root');
-    rootDiv.textContent = library.doSomething();
-});
-
 
 /***/ })
 /******/ ]);

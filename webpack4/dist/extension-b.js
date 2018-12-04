@@ -66,7 +66,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 	// Promise = chunk loading, 0 = chunk loaded
 /******/ 	var installedChunks = {
-/******/ 		1: 0
+/******/ 		2: 0
 /******/ 	};
 /******/
 /******/ 	var deferredModules = [];
@@ -157,14 +157,14 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push([1,0]);
+/******/ 	deferredModules.push([2,0]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */,
-/* 1 */
+/******/ ({
+
+/***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
 const common = __webpack_require__(0);
@@ -175,5 +175,6 @@ module.exports = function(library) {
 
 
 /***/ })
-/******/ ]);
+
+/******/ });
 });
