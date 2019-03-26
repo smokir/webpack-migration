@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "webpack": "^3.11.0"
+    "webpack": "^3.12.0"
   }
 }
